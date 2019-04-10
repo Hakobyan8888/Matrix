@@ -9,6 +9,11 @@ namespace Matrix
         public int Row { get; set; }
         public int Column { get; set; }
 
+        public Matrix(string a)
+        {
+            a = "Hello";
+        }
+
         public Matrix()
         {
             Row = int.Parse(Console.ReadLine());
@@ -29,8 +34,11 @@ namespace Matrix
             return matrix;
         }
 
-        public void PrintMatrix(int[,] arr)
+        public void PrintMatrix(int[,] arr, string About)
         {
+            Row = arr.GetLength(0);
+            Column = arr.GetLength(1);
+            Console.WriteLine(About);
             for (int i = 0; i < Row; i++)
             {
                 for (int j = 0; j < Column; j++)
