@@ -7,19 +7,26 @@ namespace Matrix
     class TransposeMatrix
     {
         Matrix matrix = new Matrix("Hello");
-        public void TransMatrix(int[,] arr)
+        public void TransMatrix(int[,] arr , string Name)
         {
             int Row = arr.GetLength(0);
             int Column = arr.GetLength(1);
             int[,] answer = new int[Row, Column];
-            for (int i = 0; i < Row; i++)
+            if (Row == Column)
             {
-                for (int j = 0; j < Column; j++)
+                for (int i = 0; i < Row; i++)
                 {
-                    answer[i, j] = arr[j, i];
+                    for (int j = 0; j < Column; j++)
+                    {
+                        answer[i, j] = arr[j, i];
+                    }
                 }
             }
-            matrix.PrintMatrix(answer, "This is Transpose");
+            else
+            {
+                Console.WriteLine("Couldn't Transpose the Matrix");
+            }
+            matrix.PrintMatrix(answer, "This is Transpose of " + Name);
         }
     }
 }

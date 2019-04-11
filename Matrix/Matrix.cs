@@ -16,7 +16,9 @@ namespace Matrix
 
         public Matrix()
         {
+            Console.WriteLine("Enter the Number of Row's");
             Row = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the Number of Column's");
             Column = int.Parse(Console.ReadLine());
         }
 
